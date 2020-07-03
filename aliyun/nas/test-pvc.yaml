@@ -1,0 +1,17 @@
+apiVersion: v1
+metadata:
+  name: test-pvc
+spec:
+  containers:
+  - image: busybox
+    args:
+    - /bin/sh
+    - -c
+    - touch /data/hello; sleep 3000
+    volumeMounts:
+    - mountPath: /data
+      name: shared-volume
+  volumes:
+  - name: shared-volume
+    persistentVolumeClaim:
+      claimName: product-claim-api
