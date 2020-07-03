@@ -3,6 +3,8 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
     name: pv-nas-production
+    labels:
+      name: pv-nas
 spec:
     capacity:
       storage: 500Gi
@@ -28,4 +30,4 @@ spec:
       storage: 100Gi
   selector:
     matchLabels:
-      pv: pv-nas-production
+      pv: pv-nas
