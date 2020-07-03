@@ -1,23 +1,21 @@
 
-kind: PersistentVolume
 apiVersion: v1
+kind: PersistentVolume
 metadata:
-  name: product-claim-api
-  labels:
-    pv: product-claim-api
+    name: pv-nas-production
+    namespace: production
 spec:
-  capacity:
-    storage: 100Gi
-  mountOptions:
-  - vers=4
-  - minorversion=0
-  - noresvport
-  accessModes:
-    - ReadWriteMany
-  persistentVolumeReclaimPolicy: Delete
-  nfs:
-    server: 69ce7499e7-gel50.cn-qingdao.nas.aliyuncs.com
-    path: "/api"
+    capacity:
+      storage: 500Gi
+    accessModes:
+      - ReadWriteMany
+    mountOptions:
+      - vers=4.0
+      - noresvport
+    persistentVolumeReclaimPolicy: Retain
+    nfs:
+      path: /production
+      server: 69ce7499e7-gel50.cn-qingdao.nas.aliyuncs.com
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -32,4 +30,4 @@ spec:
       storage: 100Gi
   selector:
     matchLabels:
-      pv: product-claim-api
+      pv: pv-nas-production
