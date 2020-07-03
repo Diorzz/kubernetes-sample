@@ -14,7 +14,7 @@ spec:
       - noresvport
     persistentVolumeReclaimPolicy: Retain
     nfs:
-      path: /production
+      path: /api
       server: 69ce7499e7-gel50.cn-qingdao.nas.aliyuncs.com
 ---
 apiVersion: v1
