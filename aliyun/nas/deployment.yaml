@@ -5,13 +5,16 @@ metadata:
   name: nfs-client-provisioner
 ---
 kind: Deployment
-apiVersion: extensions/v1
+apiVersion: apps/v1
 metadata:
   name: nfs-client-provisioner
 spec:
   replicas: 1
   strategy:
     type: Recreate
+  selector:
+    matchLabels:
+      name: nfs-client-provisioner
   template:
     metadata:
       labels:
