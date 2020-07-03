@@ -12,9 +12,12 @@ spec:
       - vers=4.0
       - noresvport
     persistentVolumeReclaimPolicy: Retain
-    nfs:
-      path: /api
-      server: 69ce7499e7-gel50.cn-qingdao.nas.aliyuncs.com
+    flexVolume:
+      driver: "alicloud/nas"
+      options:
+        path: /api
+        server: 69ce7499e7-gel50.cn-qingdao.nas.aliyuncs.com
+        vers: "4.0"
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
