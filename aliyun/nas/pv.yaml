@@ -8,10 +8,6 @@ spec:
       storage: 500Gi
     accessModes:
       - ReadWriteMany
-    mountOptions:
-      - vers=4.0
-      - noresvport
-    persistentVolumeReclaimPolicy: Retain
     flexVolume:
       driver: "alicloud/nas"
       options:
