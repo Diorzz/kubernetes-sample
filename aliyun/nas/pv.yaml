@@ -30,4 +30,4 @@ spec:
       storage: 100Gi
   selector:
     matchLabels:
-      pv: pv-nas
+      name: pv-nas
