@@ -5,6 +5,7 @@ metadata:
 spec:
   containers:
   - image: busybox
+    name: test-pvc
     args:
     - /bin/sh
     - -c
