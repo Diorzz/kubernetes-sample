@@ -8,7 +8,6 @@ spec:
   volumeMode: Filesystem
   accessModes:
   - ReadWriteOnce
-  persistentVolumeClaimPolicy: Delete
   storageClassName: local-storage
   local:
     path: /rawmnt
