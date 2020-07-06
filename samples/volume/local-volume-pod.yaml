@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Pod
+metadata:
+  name: example-pv-pod
+spec:
+  volumes:
+  - name: example-pv-storge
+    persistentVolumeClaim:
+      claimName: example-local-claim
+  containers:
+  - name: example-pv-container
+    image: nginx
+    ports:
+    - containerPort: 80
+      name: http-server
+    volumeMounts:
+    - mountPath: /usr/share/nginx/html
+      name: example-pv-storage
