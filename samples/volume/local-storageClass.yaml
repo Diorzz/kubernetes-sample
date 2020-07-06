@@ -1,5 +1,5 @@
-kind: storageClass
-apiVersion: v1
+kind: StorageClass
+apiVersion: storage.k8s.io/v
 metadata:
   name: local-storage
 privisioner: kubernetes.io/no-privisioner
