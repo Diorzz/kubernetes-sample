@@ -14,6 +14,7 @@ spec:
       containers:
       - name: hostnames
         image: k8s.gcr.io/serve_hostname
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9376
           protocol: TCP
